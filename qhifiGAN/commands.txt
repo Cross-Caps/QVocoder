@@ -1,0 +1,13 @@
+tensorboard --logdir=/home/hiddenleaf/ARYAN_MT22019/hifi-ganQ/cp_hifigan/logs --port 6007
+ssh -L 6007:localhost:6007 hiddenleaf@192.168.20.73
+http://localhost:6007/
+
+
+python3 train1Q.py --config config_1.json
+
+
+python3 train1Q.py --config config_2.json model5B
+
+
+
+python inference.py --checkpoint_file /home/hiddenleaf/ARYAN_MT22019/hifi-ganQ/cp_hifigan/g_00610000
