@@ -8,19 +8,8 @@ we proposed HiFi-GAN: a GAN-based model capable of generating high fidelity spee
 We provide our implementation and pretrained models as open source in this repository.
 
 **Abstract :**
-Several recent work on speech synthesis have employed generative adversarial networks (GANs) to produce raw waveforms. 
-Although such methods improve the sampling efficiency and memory usage, 
-their sample quality has not yet reached that of autoregressive and flow-based generative models. 
-In this work, we propose HiFi-GAN, which achieves both efficient and high-fidelity speech synthesis. 
-As speech audio consists of sinusoidal signals with various periods, 
-we demonstrate that modeling periodic patterns of an audio is crucial for enhancing sample quality. 
-A subjective human evaluation (mean opinion score, MOS) of a single speaker dataset indicates that our proposed method 
-demonstrates similarity to human quality while generating 22.05 kHz high-fidelity audio 167.9 times faster than 
-real-time on a single V100 GPU. We further show the generality of HiFi-GAN to the mel-spectrogram inversion of unseen 
-speakers and end-to-end speech synthesis. Finally, a small footprint version of HiFi-GAN generates samples 13.4 times 
-faster than real-time on CPU with comparable quality to an autoregressive counterpart.
-
-Visit our [demo website](https://jik876.github.io/hifi-gan-demo/) for audio samples.
+Neural vocoders have recently evolved to achieve superior syn- thesis quality by leveraging advancements in methods like dif- fusion, flow, transformers, GANs, etc. However, such mod- els have grown vastly in terms of space and time complex- ity, leading to challenges in the deployment of speech synthe- sis systems in resource-constraint scenarios. To address this, we present a novel low-footprint Quaternion Generative Adver- sarial Network (QGAN) for efficient and high-fidelity speech synthesis without compromising on the audio quality. QGAN achieves structural model compression over conventional GAN with quaternion convolutions in the generator and a modified multi-scale/period discriminator. To ensure model stability, we also propose weight-normalization in the quaternion domain. We show the effectiveness of QGAN with large-scale experi- ments on English and Hindi language datasets. In addition, us- ing loss landscape visualization, we provide an analysis of the learning behaviour of the proposed QGAN model.
+Visit our [demo website](https://anonymousvocoders.github.io) for audio samples.
 
 
 ## Pre-requisites
@@ -28,6 +17,7 @@ Visit our [demo website](https://jik876.github.io/hifi-gan-demo/) for audio samp
 2. Clone this repository.
 3. Install python requirements. Please refer [requirements.txt](requirements.txt)
 4. Download and extract the [LJ Speech dataset](https://keithito.com/LJ-Speech-Dataset/).
+5. Downlaod and extract the [Hindi dataset](https://openslr.org/118/)
 And move all wav files to `LJSpeech-1.1/wavs`
 
 
@@ -39,28 +29,10 @@ To train V2 or V3 Generator, replace `config_v1.json` with `config_v2.json` or `
 Checkpoints and copy of the configuration file are saved in `cp_hifigan` directory by default.<br>
 You can change the path by adding `--checkpoint_path` option.
 
-Validation loss during training with V1 generator.<br>
-![validation loss](./validation_loss.png)
 
 ## Pretrained Model
 You can also use pretrained models we provide.<br/>
 [Download pretrained models]()<br/> 
-Details of each folder are as in follows:
-
-|Folder Name|Generator|Dataset|Fine-Tuned|
-|------|---|---|---|
-|LJ_V1|V1|LJSpeech|No|
-|LJ_V2|V2|LJSpeech|No|
-|LJ_V3|V3|LJSpeech|No|
-|LJ_FT_T2_V1|V1|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|LJ_FT_T2_V2|V2|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|LJ_FT_T2_V3|V3|LJSpeech|Yes ([Tacotron2](https://github.com/NVIDIA/tacotron2))|
-|VCTK_V1|V1|VCTK|No|
-|VCTK_V2|V2|VCTK|No|
-|VCTK_V3|V3|VCTK|No|
-|UNIVERSAL_V1|V1|Universal|No|
-
-We provide the universal model with discriminator weights that can be used as a base for transfer learning to other datasets.
 <!-- 
 ## Fine-Tuning
 1. Generate mel-spectrograms in numpy format using [Tacotron2](https://github.com/NVIDIA/tacotron2) with teacher-forcing.<br/>
