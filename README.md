@@ -1,10 +1,9 @@
-# QVocoder
-# HiFi-GAN: Generative Adversarial Networks for Efficient and High Fidelity Speech Synthesis
+# QGAN: Low Footprint Quaternion Neural Vocoder for Speech Synthesis
 
-### Jungil Kong, Jaehyeon Kim, Jaekyoung Bae
+### Aryan Chaudhary, Vinayak Abrol
 
-In our [paper](https://arxiv.org/abs/2010.05646), 
-we proposed HiFi-GAN: a GAN-based model capable of generating high fidelity speech efficiently.<br/>
+In our [paper](), 
+we proposed QGAN: a Quaternion GAN-based model capable of generating high fidelity speech efficiently.<br/>
 We provide our implementation and pretrained models as open source in this repository.
 
 **Abstract :**
@@ -59,6 +58,13 @@ Example:
 Generated wav files are saved in `generated_files` by default.<br>
 You can change the path by adding `--output_dir` option.
 
+
+## Generate losslands
+1. Set checkpoint path in the lossladns.py file and load the models and their wirgths accordingly.
+2. Losslands code will dump the loss_list - a list of vlaues used for generating visualization 
+ ```
+    python losslands.py
+    ```
 
 <!-- ## Inference for end-to-end speech synthesis
 1. Make `test_mel_files` directory and copy generated mel-spectrogram files into the directory.<br>
