@@ -62,7 +62,7 @@ You can change the path by adding `--output_dir` option.
 ## Generate losslands
 1. Set checkpoint path in the lossladns.py file and load the models and their wirgths accordingly.
 2. Losslands code will dump the loss_list - a list of vlaues used for generating visualization 
- ```
+    ```
     python losslands.py
     ```
 
