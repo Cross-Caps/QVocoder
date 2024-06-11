@@ -13,15 +13,14 @@
 </h2> 
 
 In this Interspeech-24 [paper](), 
-we proposed QGAN: a Quaternion GAN-based model capable of generating high fidelity speech efficiently.<br/>
-We provide our open-source implementation and pretrained models in this repository.
+we proposed QGAN: a Quaternion GAN-based model capable of generating high fidelity speech efficiently. We provide our open-source implementation and pretrained models in this repository.<br/>
 
 **Demo:**
 Visit our [demo website](https://anonymousvocoders.github.io) for audio samples.
 
 
 ## Pre-requisites
-1. Python >= 3.6
+1. Python >= 3.8
 2. Clone this repository.
 3. Install python requirements. Please refer [requirements.txt](requirements.txt)
 4. Download and extract the [LJ Speech dataset](https://keithito.com/LJ-Speech-Dataset/).
@@ -68,7 +67,7 @@ Generated wav files are saved in `generated_files` by default.<br>
 You can change the path by adding `--output_dir` option.
 
 
-## Generate losslands
+## Generate Loss Landscapes
 1. Set checkpoint path in the lossladns.py file and load the models and their wirgths accordingly.
 2. Losslands code will dump the loss_list - a list of vlaues used for generating visualization 
     ```
