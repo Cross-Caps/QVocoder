@@ -1,13 +1,22 @@
-# QGAN: Low Footprint Quaternion Neural Vocoder for Speech Synthesis
+<h1 align="center">
+<p>QGAN :speaker: :notes:</p>
+<p align="center">
+<img alt="GitHub" src="https://img.shields.io/github/license/cross-caps/AFLI?color=green&logo=GNU&logoColor=green">
+<img alt="python" src="https://img.shields.io/badge/python-%3E%3D3.8-blue?logo=python">
+<img alt="pytorch" src="https://img.shields.io/badge/pytorch-%3E%3D1.8-orange?logo=pytorch">
+<img alt="PyPI" src="https://img.shields.io/badge/release-v1.0-brightgreen?logo=apache&logoColor=brightgreen">
+</p>
+</h1>
 
-### Aryan Chaudhary, Vinayak Abrol
+<h2 align="center">
+<p>QGAN: Low Footprint Quaternion Neural Vocoder for Speech Synthesis</p>
+</h2> 
 
-In our [paper](), 
+In this Interspeech-24 [paper](), 
 we proposed QGAN: a Quaternion GAN-based model capable of generating high fidelity speech efficiently.<br/>
-We provide our implementation and pretrained models as open source in this repository.
+We provide our open-source implementation and pretrained models in this repository.
 
-**Abstract :**
-Neural vocoders have recently evolved to achieve superior syn- thesis quality by leveraging advancements in methods like dif- fusion, flow, transformers, GANs, etc. However, such mod- els have grown vastly in terms of space and time complex- ity, leading to challenges in the deployment of speech synthe- sis systems in resource-constraint scenarios. To address this, we present a novel low-footprint Quaternion Generative Adver- sarial Network (QGAN) for efficient and high-fidelity speech synthesis without compromising on the audio quality. QGAN achieves structural model compression over conventional GAN with quaternion convolutions in the generator and a modified multi-scale/period discriminator. To ensure model stability, we also propose weight-normalization in the quaternion domain. We show the effectiveness of QGAN with large-scale experi- ments on English and Hindi language datasets. In addition, us- ing loss landscape visualization, we provide an analysis of the learning behaviour of the proposed QGAN model.
+**Demo:**
 Visit our [demo website](https://anonymousvocoders.github.io) for audio samples.
 
 
@@ -77,6 +86,8 @@ You can generate mel-spectrograms using [Tacotron2](https://github.com/NVIDIA/ta
 Generated wav files are saved in `generated_files_from_mel` by default.<br>
 You can change the path by adding `--output_dir` option. -->
 
+## Contact
+Aryan Chaudhary: aryanc55@gmail.com
 
 ## Acknowledgements
 We referred to [WaveGlow](https://github.com/NVIDIA/waveglow), [MelGAN](https://github.com/descriptinc/melgan-neurips) 
